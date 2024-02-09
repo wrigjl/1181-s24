@@ -18,9 +18,35 @@ double getBallSizeFromUser(int ballNumber) {
     }
 }
 
+bool isNotValidNumberOfBalls(int balls) {
+    if (balls > 3 || balls < 3) {
+        return true;
+    } else {
+        return false;
+    }
+}
+bool isHappy(string emotion) {
+    return emotion == "happy";
+}
 int main() {
     // Ask for the radius of each snowball
 
+    cout << "My name is \"Jason Wright\" he said" << endl;
+
+    if (isHappy("sad")) {
+        cout << "shiny happy people" << endl;
+    } else {
+        cout << "not happy" << endl;
+    }
+    // ask for number of balls... is it < 3 or > 3? if so, stop the program
+    int numberOfBalls;
+    cout << "Number of Balls? ";
+    cin >> numberOfBalls;
+
+    if (isNotValidNumberOfBalls(numberOfBalls)) {
+        cout << "Invalid number of balls...";
+        return 1;
+    }
     double radius1 = getBallSizeFromUser(1);
     double radius2 = getBallSizeFromUser(2);
     double radius3 = getBallSizeFromUser(3);
