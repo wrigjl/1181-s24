@@ -67,5 +67,10 @@ int playGames(int gamesLeft) {
     return numberOfUserWins;
 }
 int main() {
-    cout << playGames(5) << endl;
+    int howManyGames;
+
+    cout << "How many games? ";
+    cin >> howManyGames;
+    int userWins = playGames(howManyGames);
+    cout << double(userWins) / howManyGames << endl;
 }
