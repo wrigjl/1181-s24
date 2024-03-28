@@ -19,6 +19,14 @@ struct Rectangle {
     Point upperLeft, lowerRight;
 };
 
+void swapXCoordinates(Point& a, Point& b) {
+    // swap the X coordinates of points a and b
+    int tmp;
+    tmp = b.x;
+    b.x = a.x;
+    a.x = tmp;
+}
+
 void printPoint(Point p) {
     cout << "(" << p.x << "," << p.y << ",named=" << p.name << ")";
 }
@@ -56,5 +64,12 @@ int main() {
     printPoint(firstPoint);
     printPoint(secondPoint);
     cout << endl;
+
+    swapXCoordinates(firstPoint, secondPoint);
+
+    printPoint(firstPoint);
+    printPoint(secondPoint);
+    cout << endl;
+
     return 0;
 }
