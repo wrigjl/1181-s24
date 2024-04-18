@@ -22,16 +22,31 @@ void doBubblePass(vector<int> &list, int firstIndex, int lastIndex) {
     }
 }
 
+// for all elements 1 to N <- human counting
+//  x = pick random number from 1 to N
+// swap (deck[i], deck[x]
+void shuffle(vector<int>& deck) {
+    for (size_t i = 0; i < deck.size(); i++) {
+        int x = rand() % deck.size();
+        swap(deck[i], deck[x]);
+    }
+}
+
 int main() {
     vector<int> myList;
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 10; i++) {
         myList.push_back(rand() % 100);
     }
+
 
     cout << "Sorting: " << myList.size() << endl;
     for (size_t i = 0; i < myList.size() - 1; i++) {
         doBubblePass(myList, 0, myList.size() - 1 - i);
     }
+
+    printVector(myList);
+    shuffle(myList);
+    printVector(myList);
     cout << "sorted..." << endl;
     return 0;
 }
